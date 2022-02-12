@@ -1,20 +1,50 @@
+// Assalomu alaykum Jahongir aka funksiyalarimni biri ishlasa biri ishlamay qolyabdi , bookmarksBook va bookmarket funksiyani o'chirib tursayiz more-infoga o'tyabdi qayerida xato bilmadim , aniq bilaman past bal olaman , agar rostan ham past bal olsam bir marta imkon berishingizni hohlardim .
+
 "use strict";
 
 let elList = document.querySelector('.books__list');
 let searchButtun = document.querySelector('.input__box-logo');
 let elModalBook = document.querySelector('.navbar__box');
-
+let bookList = document.querySelector('.book__list');
 let elNavbarIcon = document.querySelector('.navbar__icon');
+let elBookmarkList = document.querySelector('.book__list')
 
-// const bookmarks = [];
-
-elList.addEventListener('click', bookmarksBook);
+const bookmarks = [];
 
 searchButtun.addEventListener('click' , getBook);
+elList.addEventListener('click', bookmarksBook);
 
-// elNavbarIcon.addEventListener('click' , ()=>{
-//   elModalBook.classList.remove('dashboard');
-// });
+function bookmarksBook(evt){
+  evt.preventDefault();
+  if(evt.target.classList.contains('bookmark__button')){
+    let bookmarkItem = evt.target.parentElement.parentElement;
+     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookmarkItem.dataset.id}`)
+     .then(res => res.json())
+     .then(data => bookmarket(data.items));
+
+  }
+}
+
+function bookmarket(book){
+
+  book = book[0];
+
+  let html = `
+            <li class="book__item">
+              <div class="book__hero">
+                  <p class="book__item-desc">${book.volumeInfo.title}</p>
+                  <p class="book__item_desc">${book.volumeInfo.authors}</p>
+              </div>
+              <div class="buttom__item">
+                <button class="open__book"><img src="./img/book-open.svg" alt="img"></button>
+              <button class="delete__book"><img src="./img/delete.svg" alt="img"></button>
+       </div>
+    </li>
+  `;
+
+  elBookmarkList.innerHTML = html;
+}
+
 
  function  getBook() {
 
@@ -62,7 +92,6 @@ function bookmarksBook(e){
 }
 
 function bookRecipeModal(item){
-  console.log(item);
   item = item [0];
   let html = `
        <div class="navbar__box-top">
@@ -75,7 +104,7 @@ function bookRecipeModal(item){
        </div>
 
      <div class="navbar__desc-box">
-        <p class="navbar__desc">${item.searchInfo.textSnippet}</p>
+        <p class="navbar__desc">${item.volumeInfo.description}</p>
     </div>
     <div class="navbar__ul">
        <ul class="navbarList">
@@ -113,15 +142,15 @@ function bookRecipeModal(item){
 }
 
 
-// const elLogoutBtn = document.querySelector(".btn__box-button");
-// const localToken = window.localStorage.getItem("token");
+const elLogoutBtn = document.querySelector(".btn__box-button");
+const localToken = window.localStorage.getItem("token");
 
-// if (!localToken) {
-//   window.location.replace("login.html");
-// }
+if (!localToken) {
+  window.location.replace("login.html");
+}
 
-// elLogoutBtn.addEventListener("click", function () {
-//   window.localStorage.removeItem("token");
+elLogoutBtn.addEventListener("click", function () {
+  window.localStorage.removeItem("token");
 
-//   window.location.replace("login.html");
-// });
+  window.location.replace("login.html");
+});

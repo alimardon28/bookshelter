@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Bookshelter</title>
+</head>
+<body class="body d-flex align-items-center text-center  bg-dark h-100%">
+<div class="container">
+
+   <div class="bookshelterDiv  d-flex align-items-center text-center justify-content-center">
+    <form class="form m-0 p-0">
+
+        <div class="bookshelterImg ">
+            <img class="bookshelterImg__img " src="./img/bookshelter.png" alt="bookshelter img">
+        </div>
+        <div class="inputUsername border rounded mt-5 d-flex align-items-center justify-content-center">
+            <img class="inputPaswordDiv__img mx-2 me-3" src="./img/user.svg" alt="user img">
+            <input
+              class="input-username h-100 w-100 "
+              type="text"
+              placeholder="USERNAME"
+              name="username"
+              required
+            />
+          </div>
+          <div class="inputPasword rounded mt-3 d-flex align-items-center justify-content-center border">
+            <img class="inputUsername__img mx-2 me-3"  src="./img/lock.svg" alt="lock img">
+
+            <input
+              class="input-password w-100 h-100"
+              type="password"
+              placeholder="PASSWORD"
+              name="password"
+              required
+            />
+          </div>
+          <div class="buttonGroup mt-4">
+            <button class="login-btn w-100 h-100  text-primary rounded" type="submit">Login</button>
+          </div>
+          <div class="forgot-box mt-1 text-end ">
+              <a class="forgot-box__link text-light" href="#">Forgot password?</a>
+          </div>
+    </form>
+   </div>
+</div>
+
+
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

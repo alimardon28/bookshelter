@@ -16,36 +16,36 @@ searchButtun.addEventListener('click' , getBook);
 elList.addEventListener('click', bookmarksBook);
 elModalBook.addEventListener('click' ,bookRecipeModal);
 
-// function bookmarksBook(evt){
-//   evt.preventDefault();
-//   if(evt.target.classList.contains('bookmark__button')){
-//     let bookmarkItem = evt.target.parentElement.parentElement;
-//      fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookmarkItem.dataset.id}`)
-//      .then(res => res.json())
-//      .then(data => bookmarket(data.items));
+function bookmarksBook(evt){
+  evt.preventDefault();
+  if(evt.target.classList.contains('bookmark__button')){
+    let bookmarkItem = evt.target.parentElement.parentElement;
+     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookmarkItem.dataset.id}`)
+     .then(res => res.json())
+     .then(data => bookmarket(data.items));
 
-//   }
-// }
+  }
+}
 
-// function bookmarket(book){
+function bookmarket(book){
 
-//   book = book[0];
+  book = book[0];
 
-//   let html = `
-//             <li class="book__item">
-//               <div class="book__hero">
-//                   <p class="book__item-desc">${book.volumeInfo.title}</p>
-//                   <p class="book__item_desc">${book.volumeInfo.authors}</p>
-//               </div>
-//               <div class="buttom__item">
-//                 <button class="open__book"><img src="./img/book-open.svg" alt="img"></button>
-//               <button class="delete__book"><img src="./img/delete.svg" alt="img"></button>
-//        </div>
-//     </li>
-//   `;
+  let html = `
+            <li class="book__item">
+              <div class="book__hero">
+                  <p class="book__item-desc">${book.volumeInfo.title}</p>
+                  <p class="book__item_desc">${book.volumeInfo.authors}</p>
+              </div>
+              <div class="buttom__item">
+                <button class="open__book"><img src="./img/book-open.svg" alt="img"></button>
+              <button class="delete__book"><img src="./img/delete.svg" alt="img"></button>
+       </div>
+    </li>
+  `;
 
-//   elBookmarkList.innerHTML = html;
-// }
+  elBookmarkList.innerHTML = html;
+}
 
 
  function  getBook() {

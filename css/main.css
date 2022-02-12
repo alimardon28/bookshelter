@@ -127,6 +127,14 @@
     cursor: pointer;
 }
 
+.input__box-logo:hover{
+    opacity: 0.6;
+}
+
+.input__box-logo:active{
+    opacity: 0.9;
+}
+
 .btn__box{
     margin: 0;
     padding:0;
@@ -152,6 +160,15 @@
     cursor: pointer;
 }
 
+.btn__box-button:hover{
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.btn__box-button:active{
+   background: #0703fd;
+   transition: 0.1s;
+}
 .bookmarks__results{
     position: fixed;
     top: 0;
@@ -194,6 +211,15 @@
     margin-right: -135px;
 }
 
+.results__btn:hover{
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.results__btn:active{
+    background-color: #767d8a;
+    transition: 0.1s;
+}
 .results__btn-img{
   margin-right: 5px;
   padding: 0;
@@ -282,6 +308,15 @@
     height: 24px;
     cursor: pointer;
 }
+.open__book:hover ,
+.delete__book{
+ opacity: 0.8;
+}
+.open__book:active,
+.delete__book{
+    opacity: 0.4;
+}
+
 
 .delete__book{
     border: none;
@@ -415,6 +450,28 @@
     text-decoration: none;
 }
 
+.bookmark__button:hover{
+    opacity: 0.8;
+}
+.more-info__button:hover{
+     opacity: 0.5;
+}
+.read__button:hover{
+    opacity: 0.8;
+}
+
+.bookmark__button:active{
+    opacity: 0.6;
+}
+
+.more-info__button:active{
+    background: #a9b5da;
+}
+
+.read__button:active{
+    background: #666769;
+}
+
 .notFound{
     grid-template-columns: 1fr !important;
     color: red;
@@ -425,7 +482,7 @@
 }
 
 /* MODAL */
-.navbar__box{
+/* .navbar__box{
     position: relative;
     position: fixed;
     top: 0;
@@ -440,13 +497,34 @@
     left: 101%;
     padding: 5px 10px;
     z-index: 100;
-    background-color: #fff;
+    background-color: #000;
     display: none;
+} */
+.navbar__box{
+    background-color: #fff;
+    max-width: 552px;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    z-index: 10;
+    min-height: 100vh;
+    width: 100%;
+    transition: 0.3s ease-in-out initial;
 }
+
+.navbar__box.active{
+    right: 0%;
+    transition: 0.3s ease initial;
+}
+
+.navbar__box.hide{
+    right: 100%;
+    transition: 0.5s ease inherit;
+}
+
 
 .navbar__box-top{
     position: absolute;
-    top: -51px;
     right: 0;
     display: flex;
     align-items: center;
@@ -463,7 +541,7 @@
 }
 
 .navbarImgBox{
-    margin: 0;
+    margin-top:70px;
     padding:10px 40px;
     text-align: center;
 }
@@ -527,15 +605,8 @@
     cursor: pointer;
 }
 
-.dashboard{
-    right: 0;
-    transition: 3s ease-in;
-    left: 60%;
-    display:block;
-}
-
 .box__navbar{
-  width: 100%;
+ width: 500px;
   height: 35px;
   padding-top: 10px;
   background-color: #F8FAFD;
@@ -553,5 +624,13 @@
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 470px;
+    margin-left: 420px;
+}
+
+.bax__link:hover{
+    opacity: 0.5;
+}
+
+.bax__link:active{
+    background: #595a5a;
 }

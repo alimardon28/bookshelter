@@ -1,4 +1,4 @@
-// Assalomu alaykum Jahongir aka funksiyalarimni biri ishlasa biri ishlamay qolyabdi , bookmarksBook va bookmarket funksiyani o'chirib tursayiz more-infoga o'tyabdi qayerida xato bilmadim . Aniq bilaman past bal olaman , agar rostan ham past bal olsam bir marta imkon berishingizni hohlardim .
+// Assalomu alaykum Jahongir aka funksiyalarimni biri ishlasa biri ishlamay qolyabdi . Bookmark ham qiladi faqat daynamec emas.bookmarksBook va bookRecipeModal o'chirb tursayiz bookmark qiladi. Aniq bilaman past bal olaman , agar rostan ham past bal olsam bir marta imkon berishingizni hohlardim .
 
 "use strict";
 
